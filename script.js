@@ -1,7 +1,7 @@
 // Додай сюди справжні контакти, коли вони будуть готові.
 const CONTACTS = {
-  telegram: "https://t.me/yusribnyy",
-  viber: "viber://chat?number=%2B380993004344"
+  telegram: "", // Наприклад: "https://t.me/your_username"
+  viber: ""     // Наприклад: "viber://chat?number=%2B380XXXXXXXXX"
 };
 
 document.getElementById("year").textContent = new Date().getFullYear();

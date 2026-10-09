@@ -66,8 +66,6 @@ h2 { margin: 10px 0 18px; font-size: clamp(2.6rem, 5vw, 4.2rem); }
 .video-wrap video { display: block; width: 100%; max-height: 620px; }
 .contacts-section { background: #0c0b0a; }
 .contact-card { text-align: center; }
-.phone-line { text-align: center; color: var(--muted); margin: -20px 0 32px; }
-.phone-line a { color: var(--gold-light); text-decoration: none; }
 .contact-icon { display: grid; place-items: center; width: 54px; height: 54px; margin: 0 auto 18px; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); font-weight: 700; }
 .contact-card .button { margin-top: 14px; }
 .footer { padding: 30px 20px; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
