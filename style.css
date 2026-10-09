@@ -25,7 +25,7 @@ a { color: inherit; }
 }
 .brand { display: inline-flex; align-items: center; min-width: 70px; }
 .logo { width: 78px; height: 62px; object-fit: contain; }
-.nav { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 34px); }
+.nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 30px); }
 .nav-link { text-decoration: none; color: var(--muted); font-size: .88rem; transition: color .2s; }
 .nav-link:hover, .nav-link.active { color: var(--gold-light); }
 .menu-toggle { display: none; color: var(--gold); background: transparent; border: 1px solid var(--line); border-radius: 8px; padding: 7px 11px; font-size: 1.2rem; }
@@ -41,36 +41,77 @@ h1 { margin: 18px 0; font-size: clamp(3.4rem, 9vw, 7.6rem); letter-spacing: -.03
 h1 span, h2 span { color: var(--gold); }
 .hero-text { margin: 24px 0 32px; color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); }
 .gold-line { width: 94px; height: 1px; margin: 28px auto; background: var(--gold); }
-.button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 22px; border: 1px solid var(--gold); text-decoration: none; font-size: .88rem; font-weight: 700; transition: background .2s, color .2s, transform .2s; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 22px; border: 1px solid var(--gold); text-decoration: none; font-size: .88rem; font-weight: 700; transition: background .2s, color .2s, transform .2s; cursor: pointer; }
 .button:hover { transform: translateY(-2px); }
 .button-gold { background: var(--gold); color: #111; }
 .button-gold:hover { background: var(--gold-light); }
 .button-outline { color: var(--gold-light); background: transparent; }
 .button-outline:hover { background: rgba(212,177,106,.1); }
+
 .section-heading { max-width: 760px; margin: 0 auto 44px; text-align: center; }
 h2 { margin: 10px 0 18px; font-size: clamp(2.6rem, 5vw, 4.2rem); }
 .section-heading > p:not(.eyebrow) { color: var(--muted); }
+
+/* Секція "Про нас" / Вікові групи */
+.about-section { background: #0b0a09; }
+.groups-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.group-card { padding: 32px 24px; border: 1px solid var(--line); background: linear-gradient(145deg, #15130f, #0d0c0b); text-align: center; }
+.group-card h3 { font-size: 1.8rem; margin: 10px 0 6px; }
+.age-badge { display: inline-block; color: var(--gold-light); border: 1px solid var(--line); padding: 4px 14px; font-size: 0.85rem; font-weight: 600; margin-bottom: 14px; border-radius: 20px; }
+.group-card p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+/* Розклад і ціни */
 #schedule { background: #0c0b0a; }
 .price-grid, .contact-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-.price-card, .contact-card { padding: clamp(24px, 4vw, 42px); border: 1px solid var(--line); background: linear-gradient(145deg, #15130f, #0d0c0b); }
+.price-card, .contact-card { padding: clamp(24px, 4vw, 42px); border: 1px solid var(--line); background: linear-gradient(145deg, #15130f, #0d0c0b); display: flex; flex-direction: column; justify-content: space-between; }
 .card-kicker { color: var(--gold); font-size: .7rem; letter-spacing: .16em; font-weight: 700; }
 .price-card h3, .contact-card h3 { font-size: 2rem; margin: 14px 0; }
 .price { color: var(--gold-light); font-size: clamp(2rem, 4vw, 2.8rem); margin: 20px 0 10px; font-weight: 600; }
 .price small { color: var(--muted); font-size: .9rem; font-weight: 400; }
 .price-card > p:not(.card-kicker):not(.price), .contact-card p { color: var(--muted); }
+.card-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
 .text-link { display: inline-block; margin-top: 18px; color: var(--gold-light); text-decoration: none; }
 .text-link span { padding-left: 6px; }
 .note, .video-caption { max-width: 1000px; margin: 24px auto 0; text-align: center; color: var(--muted); font-size: .86rem; }
+
+/* Секція "Тренери" */
+.trainers-section { background: #080808; }
+.trainers-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+.trainer-card { background: linear-gradient(145deg, #15130f, #0d0c0b); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; }
+.trainer-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+.trainer-photo-wrap { width: 100%; height: 280px; overflow: hidden; background: var(--panel-2); }
+.trainer-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(15%); transition: filter 0.3s ease, transform 0.3s ease; }
+.trainer-card:hover .trainer-photo { filter: grayscale(0%); transform: scale(1.03); }
+.trainer-info { padding: 20px; text-align: center; }
+.trainer-spec { color: var(--gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+.trainer-info h3 { font-size: 1.5rem; margin: 0 0 10px 0; color: var(--text); }
+.trainer-price { color: var(--muted); font-size: 0.9rem; margin: 0; }
+.trainer-price span { color: var(--gold-light); font-weight: 700; }
+
+/* Маршрут під відео */
 .address { color: var(--gold-light) !important; font-size: 1.1rem; margin: 24px 0; }
 .video-wrap { max-width: 950px; margin: 44px auto 0; border: 1px solid var(--line); background: #000; }
 .video-wrap video { display: block; width: 100%; max-height: 620px; }
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 950px; margin: 28px auto 0; }
+.step-item { background: var(--panel); border: 1px solid var(--line); padding: 18px; border-radius: 8px; text-align: center; }
+.step-num { display: inline-block; width: 32px; height: 32px; line-height: 30px; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold-light); font-weight: 700; margin-bottom: 8px; }
+.step-item p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+.step-item strong { color: var(--gold-light); }
+
+/* Контакти та футер */
 .contacts-section { background: #0c0b0a; }
 .contact-card { text-align: center; }
+.phone-line { text-align: center; color: var(--muted); margin: -20px 0 32px; }
+.phone-line a { color: var(--gold-light); text-decoration: none; }
 .contact-icon { display: grid; place-items: center; width: 54px; height: 54px; margin: 0 auto 18px; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); font-weight: 700; }
 .contact-card .button { margin-top: 14px; }
 .footer { padding: 30px 20px; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
 .footer-logo { width: 66px; height: 52px; object-fit: contain; opacity: .8; }
-code { color: var(--gold-light); }
+
+@media (max-width: 860px) {
+  .groups-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 720px) {
   .site-header { padding: 8px 18px; }
   .logo { width: 64px; height: 52px; }
