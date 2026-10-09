@@ -11,26 +11,43 @@
   --line: rgba(212, 177, 106, .3);
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+  background-color: var(--bg);
+}
 
 body {
   margin: 0;
-  background: var(--bg);
+  padding: 0;
+  background-color: var(--bg);
   color: var(--text);
   font-family: 'Manrope', Arial, sans-serif;
   line-height: 1.65;
+  overflow-x: hidden;
 }
 
 a { color: inherit; }
 
 /* ШАПКА ТА НАВІГАЦІЯ */
 .site-header {
-  position: sticky; top: 0; z-index: 10; display: flex; align-items: center;
-  justify-content: space-between; gap: 24px; padding: 12px clamp(18px, 5vw, 72px);
-  background: rgba(8, 8, 8, .96); border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px clamp(18px, 5vw, 72px);
+  background: rgba(8, 8, 8, .96);
+  border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
 }
+
 .brand { display: inline-flex; align-items: center; min-width: 70px; }
 .logo { width: 78px; height: 62px; object-fit: contain; }
 .nav { display: flex; align-items: center; gap: clamp(14px, 2vw, 30px); }
@@ -41,10 +58,13 @@ a { color: inherit; }
 /* СЕКЦІЇ ТА КНОПКИ */
 .section { padding: clamp(72px, 10vw, 124px) clamp(20px, 8vw, 120px); }
 .hero {
-  min-height: min(690px, calc(100vh - 86px)); display: grid; place-items: center; text-align: center;
+  min-height: min(690px, calc(100vh - 86px));
+  display: grid;
+  place-items: center;
+  text-align: center;
   background: radial-gradient(ellipse at 50% 45%, rgba(212,177,106,.075), transparent 52%), var(--bg);
 }
-.hero-content { max-width: 850px; }
+.hero-content { max-width: 850px; margin: 0 auto; }
 .eyebrow { color: var(--gold); letter-spacing: .24em; font-size: .72rem; font-weight: 700; }
 h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; line-height: 1.08; }
 h1 { margin: 18px 0; font-size: clamp(3.4rem, 9vw, 7.6rem); letter-spacing: -.035em; }
@@ -130,7 +150,7 @@ h2 { margin: 10px 0 18px; font-size: clamp(2.6rem, 5vw, 4.2rem); }
 .footer { padding: 30px 20px; text-align: center; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
 .footer-logo { width: 66px; height: 52px; object-fit: contain; opacity: .8; }
 
-/* АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ */
+/* АДАПТИВНІСТЬ */
 @media (max-width: 860px) {
   .groups-grid { grid-template-columns: 1fr; }
 }

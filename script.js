@@ -1,8 +1,3 @@
-const CONTACTS = {
-  telegram: "https://t.me/yusribnyy",
-  viber: "viber://chat?number=%2B380993004344"
-};
-
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const menuToggle = document.getElementById("menuToggle");
@@ -21,7 +16,6 @@ document.querySelectorAll(".nav-link").forEach((link) => {
   });
 });
 
-// Підсвічування активного пункту меню при скролі
 const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", () => {
   const scrollY = window.pageYOffset;
